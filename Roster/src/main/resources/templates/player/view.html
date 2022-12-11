@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<!--<head th:replace="fragments :: head"></head>-->
+
+<body>
+<h1 th:text="${'Player: ' + player.name}">Player</h1>
+
+<!--<nav th:replace="fragments :: page-header"></nav>-->
+
+<div>
+  <p th:text="${'Name: ' + player.name}"></p>
+  <p th:text="${'Sport: ' + player.sport}"></p>
+</div>
+
+
+</body>
+</html>
