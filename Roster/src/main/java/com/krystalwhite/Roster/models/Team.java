@@ -8,22 +8,21 @@ import lombok.*;
 
 import java.util.List;
 
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class Player {
+public class Team {
 
     @Id
     @GeneratedValue
     private @Getter int id;
 
-    @NotBlank(message="A name is required.")
+    @NotBlank(message="A team name is required.")
     private @Getter @Setter String name;
 
-    private @Getter @Setter String sport;
+    private @Getter @Setter List<Player> roster;
 
-//    private List<Team> teams;
+
 }
