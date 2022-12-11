@@ -3,9 +3,11 @@ package com.krystalwhite.Roster.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,7 +24,8 @@ public class Team {
     @NotBlank(message="A team name is required.")
     private @Getter @Setter String name;
 
-    private @Getter @Setter List<Player> roster;
+    @OneToMany
+    private @Getter @Setter List<Player> players = new ArrayList<>();
 
 
 }
