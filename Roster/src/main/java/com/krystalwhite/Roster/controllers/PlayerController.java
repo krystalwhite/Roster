@@ -1,7 +1,9 @@
 package com.krystalwhite.Roster.controllers;
 
 import com.krystalwhite.Roster.data.PlayerRepository;
+import com.krystalwhite.Roster.data.TeamRepository;
 import com.krystalwhite.Roster.models.Player;
+import com.krystalwhite.Roster.models.Team;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,9 @@ public class PlayerController {
     @Autowired
     private PlayerRepository playerRepository;
 
+    @Autowired
+    private TeamRepository teamRepository;
+
     @GetMapping("")
     public String index(Model model) {
         model.addAttribute("players", playerRepository.findAll());
@@ -32,14 +37,22 @@ public class PlayerController {
 
     @PostMapping("add")
     public String processAddPlayerForm(@ModelAttribute @Valid Player newPlayer,
-                                       Errors errors, Model model) {
+                                       Errors errors, Model model, @RequestParam int teamId) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Incorrect Entry, Try Again");
             return "player/add";
         }
-        playerRepository.save(newPlayer);
-        return "redirect:";
+
+        Optional<Team> playerTeam = teamRepository.findById(teamId);
+        if (playerTeam.isPresent()) {
+            newPlayer.setTeam(playerTeam);
+            playerRepository.save(newPlayer);
+            return "player/view";
+        } else {
+            return "redirect:";
+        }
+
     }
 
     @GetMapping("view/{playerId}")
