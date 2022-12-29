@@ -10,12 +10,19 @@ public class PlayerController {
 
     @GetMapping("")
     public String index(Model model) {
+        model.addAttribute("title", "List of Players");
         return "player/index";
+    }
+    @GetMapping("view")
+    public String displaySinglePlayer(Model model) {
+        model.addAttribute("title", "Player Information");
+        return "player/view";
     }
 
     @GetMapping("add")
     public String displayAddPlayerForm(Model model) {
         model.addAttribute(new Player());
+        model.addAttribute("title", "Add a Player");
         return "player/add";
     }
 
