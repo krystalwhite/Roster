@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+
+<head th:fragment="head">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+  <link th:href="@{/styles.css}" rel="stylesheet" type="text/css">
+  <script th:src="script.js"></script>
   <meta charset="UTF-8"/>
-  <title></title>
 </head>
+
 <body>
 
-<nav th:fragment="navBar">
-  <h1>Krystal's Roster project</h1>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/teams">Teams</a></li>
-    <li><a href="/players">Players</a></li>
-  </ul>
+<nav th:fragment="navBar" class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/players">List of Players</a>
+  <a href="/players/add">Add a Player</a>
+  <a href="/coaches">List of Coaches</a>
+  <a href="/coaches/add">Add a Coach</a>
+
+  <div class="topnav-right">
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+  </div>
+
 </nav>
 
+<header th:fragment="header">
+  <h1 class="text-black fs-3 fw-bolder">Youth Sports: Teams, Coaches, and Players</h1>
+  <title th:text="${title}"></title>
+</header>
+
+<footer th:fragment="footer">
+  <p>Krystal White &#169; 2022 </p>
+</footer>
 </body>
 </html>
