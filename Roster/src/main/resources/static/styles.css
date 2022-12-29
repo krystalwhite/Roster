@@ -30,3 +30,49 @@
 .topnav-right {
   float: right;
 }
+
+/* Format registration form */
+#registration-form {
+  flex: 1;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center;
+  height: 100%
+  width: 75%
+  align-items: center;
+}
+
+#registration-div {
+  display: flex;
+  width: 78px;
+}
+
+/* Format login form */
+#login {
+  color: black;
+  float: right;
+  padding: 5px 25px;
+  visibility: visible;
+}
+#login-form {
+  flex: 1;
+  flex-direction: column;
+  margin: 60px;
+  text-align: left;
+  height: 100%
+ }
+#login:hover{
+  font-weight: bold;
+}
+
+/* Allows centering of form on page */
+.flex-container {
+  margin-top: 20px;
+  min-height: 90vh;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

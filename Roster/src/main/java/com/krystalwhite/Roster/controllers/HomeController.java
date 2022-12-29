@@ -11,4 +11,13 @@ public class HomeController {
     public String renderLandingPage(Model model){
         return "index";
     }
+    @GetMapping("/login")
+    public String renderLoginPage(Model model) {
+        return "login";
+    }
+
+    @GetMapping("/register")
+    public String renderRegisterPage(Model model) {
+        return "register";
+    }
 }
