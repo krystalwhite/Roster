@@ -3,18 +3,15 @@ package com.krystalwhite.Roster.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 import java.util.Objects;
 
-@Entity
+//@Entity
 public class Coach {
 
-    @Id @GeneratedValue
+//    @Id @GeneratedValue
     private int id;
 
     @NotBlank(message="Name is required")

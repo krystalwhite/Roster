@@ -5,10 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 
 import java.util.Objects;
 
-@Entity
+//@Entity
 public class Player {
 
-    @Id @GeneratedValue
+//    @Id @GeneratedValue
     private int id;
 
     @NotBlank(message = "Name is required.")
