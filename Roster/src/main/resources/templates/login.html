@@ -4,9 +4,8 @@
 <body>
 <nav th:replace="fragments :: navBar"></nav>
 <header th:replace="fragments :: header"></header>
-
+<h1>Enter email address and password to login.</h1>
 <main class="flex-container">
-
   <form id="login-form" method="post">
     <label th:for="email">Email Address
       <input class="input" th:field="${loginDTO.email}" placeholder="email">

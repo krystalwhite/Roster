@@ -38,10 +38,10 @@
   margin-top: 60px;
   margin-left: 25%;
   margin-right: 25%;
-  text-align: center;
+  text-align: left;
   height: 100%
   width: 75%
-  align-items: center;
+  align-items: left;
 }
 
 #registration-div {

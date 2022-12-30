@@ -6,6 +6,7 @@ import com.krystalwhite.Roster.models.dto.LoginDTO;
 import com.krystalwhite.Roster.models.dto.RegisterDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import javax.script.ScriptException;
 import java.io.IOException;
 import java.util.Optional;
 
+@Controller
 public class AuthenticationController {
 
     public static final String userSessionKey = "user";

@@ -5,21 +5,21 @@
 <nav th:replace="fragments :: navBar"></nav>
 <header th:replace="fragments :: header"></header>
 
-<h1>Register</h1>
+<h1>Complete the form to register.</h1>
 <main class="flex-container">
   <form id="registration-form" method="post">
     <div class="registration-div">
 
-      <input class="input" type="text" placeholder="Name" th:field="${registerDTO.name}" />
+      Name: <input class="input" type="text" placeholder="Name" th:field="${registerDTO.name}" />
       <p class="errors" th:errors="${registerDTO.name}"></p>
 
-      <input class="input" type="email"  placeholder="Email Address" th:field="${registerDTO.email}" />
+      Email address: <input class="input" type="email"  placeholder="Email Address" th:field="${registerDTO.email}" />
       <p class="errors" th:errors="${registerDTO.email}"></p>
 
-      <input class="input" placeholder="Password" th:field="${registerDTO.password}" type="password" />
+      Password: <input class="input" placeholder="Password" th:field="${registerDTO.password}" type="password" />
       <p class="errors" th:errors="${registerDTO.password}"></p>
 
-      <input class="input" placeholder="Verify Password" th:field="${registerDTO.verifyPassword}" type="password" />
+      Re-enter password: <input class="input" placeholder="Verify Password" th:field="${registerDTO.verifyPassword}" type="password" />
     </div>
 
     <input class="black-btn" type="submit" value="Register" />
