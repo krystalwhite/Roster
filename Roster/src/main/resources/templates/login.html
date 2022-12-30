@@ -9,16 +9,16 @@
 
   <form id="login-form" method="post">
     <label th:for="email">Email Address
-      <input class="input" th:field="${loginFormDTO.username}" placeholder="email">
+      <input class="input" th:field="${loginDTO.email}" placeholder="email">
     </label>
-    <p class="errors" th:errors="${loginFormDTO.username}"></p>
+    <p class="errors" th:errors="${loginDTO.email}"></p>
     <br>
     <br>
 
     <label>Password
-      <input class="input" th:field="${loginFormDTO.password}" type="password" placeholder="password">
+      <input class="input" th:field="${loginDTO.password}" type="password" placeholder="password">
     </label>
-    <p class="errors" th:errors="${loginFormDTO.password}"></p>
+    <p class="errors" th:errors="${loginDTO.password}"></p>
     <br>
     <br>
 
