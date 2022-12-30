@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navBar"></nav>
+<header th:replace="fragments :: header"></header>
+
+<h1>Complete the form to register.</h1>
+<main class="flex-container">
+  <form id="registration-form" method="post">
+    <div class="registration-div">
+
+      Name: <input class="input" type="text" placeholder="Name" th:field="${registerDTO.name}" />
+      <p class="errors" th:errors="${registerDTO.name}"></p>
+
+      <br>
+      <br>
+
+      Email address: <input class="input" type="email"  placeholder="Email Address" th:field="${registerDTO.email}" />
+      <p class="errors" th:errors="${registerDTO.email}"></p>
+
+      <br>
+      <br>
+
+      Password: <input class="input" placeholder="Password" th:field="${registerDTO.password}" type="password" />
+      <p class="errors" th:errors="${registerDTO.password}"></p>
+
+      <br>
+      <br>
+
+      Re-enter password: <input class="input" placeholder="Verify Password" th:field="${registerDTO.verifyPassword}" type="password" />
+    </div>
+
+    <input class="black-btn" type="submit" value="Register" />
+  </form>
+</main>
+
+
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

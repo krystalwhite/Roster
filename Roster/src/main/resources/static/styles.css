@@ -30,3 +30,66 @@
 .topnav-right {
   float: right;
 }
+
+/* Format registration form */
+#registration-form {
+  flex: 1;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: left;
+  height: 100%
+  width: 75%
+  align-items: left;
+}
+
+#registration-div {
+  display: flex;
+  width: 78px;
+}
+
+/* Format login form */
+#login {
+  color: black;
+  float: right;
+  padding: 5px 25px;
+  visibility: visible;
+}
+#login-form {
+  flex: 1;
+  flex-direction: column;
+  margin: 60px;
+  text-align: left;
+  height: 100%
+ }
+#login:hover{
+  font-weight: bold;
+}
+
+/* Allows centering of form on page */
+.flex-container {
+  margin-top: 20px;
+  min-height: 90vh;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Black buttons */
+.black-btn {
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding: 5px 20px 5px 20px;
+  margin: 10px;
+  border: solid 2px black;
+  border-radius: 3px;
+  width: 50%;
+}
+
+/* Color error messages */
+.errors {
+  color: red;
+}
