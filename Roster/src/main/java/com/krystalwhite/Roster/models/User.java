@@ -12,15 +12,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Data @Entity
 public class User {
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
     @Id @GeneratedValue
-    private String id;
-    @NotBlank
+    private int id;
+    @NotBlank(message = "Please enter your name.")
     @NotNull
     private String name;
 
-    @NotBlank
+    @NotBlank(message = "Please enter your email address.")
     @NotNull
-    @Email
+    @Email(message = "Please enter a valid email address.")
     private String email;
 
     private String pwHash;
@@ -42,23 +43,5 @@ public class User {
     public boolean isPasswordMatching(String password) {
         return encoder.matches(password, pwHash);
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
 
 }

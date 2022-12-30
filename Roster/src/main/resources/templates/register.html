@@ -13,11 +13,20 @@
       Name: <input class="input" type="text" placeholder="Name" th:field="${registerDTO.name}" />
       <p class="errors" th:errors="${registerDTO.name}"></p>
 
+      <br>
+      <br>
+
       Email address: <input class="input" type="email"  placeholder="Email Address" th:field="${registerDTO.email}" />
       <p class="errors" th:errors="${registerDTO.email}"></p>
 
+      <br>
+      <br>
+
       Password: <input class="input" placeholder="Password" th:field="${registerDTO.password}" type="password" />
       <p class="errors" th:errors="${registerDTO.password}"></p>
+
+      <br>
+      <br>
 
       Re-enter password: <input class="input" placeholder="Verify Password" th:field="${registerDTO.verifyPassword}" type="password" />
     </div>

@@ -73,7 +73,7 @@ public class AuthenticationController {
 
         String verifyPassword = registerDTO.getVerifyPassword();
         if (!password.equals(verifyPassword)) {
-            errors.rejectValue("password", "passwords.mismatch", "Passwords do not match");
+            errors.rejectValue("password", "passwords.mismatch", "Passwords do not match.");
             model.addAttribute("title", "Register");
             return "register";
         }
