@@ -5,11 +5,11 @@
   <nav th:replace="fragments :: navBar"></nav>
   <header th:replace="fragments :: header"></header>
 
-  <h1 th:text="${'Player: ' + player.name}">Player</h1>
+  <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+  <h2 th:text="${'Player Name: ' + player.name}">Name</h2>
 
     <div>
-      <p th:text="${'Name: ' + player.name}"></p>
-      <p th:text="${'Sport: ' + player.sport}"></p>
+      <p th:text="${'Sport: ' + player.sport}">Sport</p>
     </div>
 
   <footer th:replace="fragments :: footer"></footer>
