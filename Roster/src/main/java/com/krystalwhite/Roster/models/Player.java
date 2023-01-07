@@ -11,18 +11,22 @@ public class Player {
 
     @Id @GeneratedValue
     private int id;
-    @NotBlank(message = "Name is required.")
-    private String name;
+
+    @NotBlank(message = "First name is required.")
+    private String firstName;
+    @NotBlank(message = "Last name is required.")
+    private String lastName;
     @NotBlank(message = "Include a sport.")
     private String sport;
 
-    private String team;
+//    private String team;
 
 //    private image image;
 
     public Player() {}
-    public Player(String name, String sport) {
-        this.name=name;
+    public Player(String firstName, String lastName, String sport) {
+        this.firstName=firstName;
+        this.lastName=lastName;
         this.sport=sport;
     }
 //

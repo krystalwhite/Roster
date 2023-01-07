@@ -7,6 +7,20 @@
 
 <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
+<div>
+    <form method = "post">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstName" placeholder="Player's first name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastName" placeholder="Player's last name..">
+
+        <label for="sport">Sport</label>
+        <input type="text" id="sport" name="sport" placeholder="Player's primary sport..">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
 <footer th:replace="fragments :: footer"></footer>
 </body>
