@@ -5,6 +5,16 @@
 <nav th:replace="fragments :: navBar"></nav>
 <header th:replace="fragments :: header"></header>
 
+<table id="players">
+    <tr th:each="coach:${coaches}">
+        <td>
+            <p th:text="${'Id: ' + coach.id}"></p>
+            <p th:text="${'Name: ' + coach.firstName + ' ' + coach.lastName}"></p>
+            <p th:text="${'Sport: ' + coach.sport}"></p>
+        </td>
+    </tr>
+</table>
+
 <footer th:replace="fragments :: footer"></footer>
 </body>
 </html>
