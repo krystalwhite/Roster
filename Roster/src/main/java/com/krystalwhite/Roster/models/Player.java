@@ -1,7 +1,6 @@
 package com.krystalwhite.Roster.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,8 +11,14 @@ public class Player extends AbstractPerson {
 
 //    private image image;
 
+    @ManyToOne
+    private Coach coach;
     public Player() {}
     public Player(String firstName, String lastName, String sport) {
         super();
+    }
+    public Player(Coach coach) {
+        this();
+        this.coach = coach;
     }
 }
