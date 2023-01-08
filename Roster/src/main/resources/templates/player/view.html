@@ -8,12 +8,12 @@
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
   <h2 th:text="${'Name: ' + player.firstName + ' ' + player.lastName}">Name</h2>
 
-    <div>
-      <p th:text="${'Sport: ' + player.sport}">Sport</p>
-      <p>
-        <a th:href="@{'/coach/view/' + ${player.coach.id}}" th:text="${player.coach.firstName + ' ' + player.coach.lastName}"></a>
-      </p>
-    </div>
+  <div>
+    <p th:text="${'Sport: ' + player.sport}">Sport</p>
+    <p>
+      <a th:href="@{'/coach/view/' + ${player.coach.id}}" th:text="${player.coach.firstName + ' ' + player.coach.lastName}"></a>
+    </p>
+  </div>
 
   <footer th:replace="fragments :: footer"></footer>
 </body>

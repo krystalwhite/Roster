@@ -19,6 +19,9 @@ public class CoachController {
     @Autowired
     private CoachRepository coachRepository;
 
+    @Autowired
+    private PlayerRepository playerRepository;
+
     @GetMapping("")
     public String index(Model model) {
         model.addAttribute("title", "List of Coaches");
