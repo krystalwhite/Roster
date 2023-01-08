@@ -10,6 +10,13 @@
 
 <div>
     <p th:text="${'Sport: ' + coach.sport}">Sport</p>
+    <p> Players
+        <ul>
+            <li th:each="player : ${coach.roster}">
+                <a th:href="@{'/player/view/' + ${coach.player.id}}" th:text="${coach.player.firstName + ' ' + coach.player.lastName}"></a>
+        </ul>
+
+    </p>
 </div>
 
 <footer th:replace="fragments :: footer"></footer>
