@@ -8,8 +8,10 @@
 <table id="players">
     <tr th:each="coach:${coaches}">
         <td>
-            <p th:text="${'Id: ' + coach.id}"></p>
-            <p th:text="${'Name: ' + coach.firstName + ' ' + coach.lastName}"></p>
+            <p th:text="${'Coach Number: ' + coach.id}"></p>
+            <p>
+                <a th:href="@{'/coach/view/' + ${coach.id}}" th:text="${'Name: ' + coach.firstName + ' ' + coach.lastName}"></a>
+            </p>
             <p th:text="${'Sport: ' + coach.sport}"></p>
         </td>
     </tr>

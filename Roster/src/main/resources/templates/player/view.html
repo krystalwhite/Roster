@@ -6,7 +6,7 @@
   <header th:replace="fragments :: header"></header>
 
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-  <h2 th:text="${'Player's Name: ' + player.firstName + ' ' + player.lastName}">Name</h2>
+  <h2 th:text="${'Name: ' + player.firstName + ' ' + player.lastName}">Name</h2>
 
     <div>
       <p th:text="${'Sport: ' + player.sport}">Sport</p>
