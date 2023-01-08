@@ -4,18 +4,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import lombok.Data;
 
-@MappedSuperclass
+@MappedSuperclass @Data
 public abstract class AbstractPerson {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private int id;
 
-    @NotBlank(message="A name is required.")
-    @Size(min=1, max = 75, message="The maximum character limit is 75.")
-    private String name;
+    @NotBlank(message = "First name is required.")
+    private String firstName;
 
+    @NotBlank(message = "Last name is required.")
+    private String lastName;
+
+    @NotBlank(message = "Include a sport.")
     private String sport;
+
+
 }
