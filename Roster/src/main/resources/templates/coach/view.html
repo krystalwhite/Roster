@@ -10,17 +10,18 @@
 
 
 <table>
-<tr th:each="player : ${roster}">
+<tr>
     <td>
         <p th:text="${'Sport: ' + coach.sport}">Sport</p>
         <p> Players
             <ul>
-                <li th:each="player : ${roster}">
-                    <a th:href="@{'/player/view/' + ${roster.player.id}}" th:text="${roster.player.firstName + ' ' + roster.player.lastName}"></a>
+                <li th:each="player : ${coach.roster}">
+                    <a th:href="@{'/player/view/' + ${player.id}}" th:text="${player.firstName + ' ' + player.lastName}"></a>
                 </li>
             </ul>
         </p>
     </td>
+</tr>
 </table>
 <footer th:replace="fragments :: footer"></footer>
 </body>
