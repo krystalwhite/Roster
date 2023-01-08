@@ -18,6 +18,12 @@
         <label for="sport">Sport</label>
         <input type="text" id="sport" name="sport" placeholder="Player's primary sport...">
 
+        <label th:for="coach">Select the Coach</label>
+        <select name="coachId">
+            <option th:each="coach : ${coaches}"
+                    th:text="${coach.firstName + ' ' + coach.lastName}"
+                    th:value="${coach.id}"></option>
+
         <input type="submit" value="Submit">
     </form>
 </div>

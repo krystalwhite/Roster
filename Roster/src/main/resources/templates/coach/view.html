@@ -8,10 +8,21 @@
 <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 <h2 th:text="${'Name: ' + coach.firstName + ' ' + coach.lastName}">Name</h2>
 
-<div>
-    <p th:text="${'Sport: ' + coach.sport}">Sport</p>
-</div>
 
+<table>
+<tr>
+    <td>
+        <p th:text="${'Sport: ' + coach.sport}">Sport</p>
+        <p> Players
+            <ul>
+                <li th:each="player : ${coach.roster}">
+                    <a th:href="@{'/player/view/' + ${player.id}}" th:text="${player.firstName + ' ' + player.lastName}"></a>
+                </li>
+            </ul>
+        </p>
+    </td>
+</tr>
+</table>
 <footer th:replace="fragments :: footer"></footer>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package com.krystalwhite.Roster.controllers;
 
+import com.krystalwhite.Roster.data.CoachRepository;
 import com.krystalwhite.Roster.data.PlayerRepository;
+import com.krystalwhite.Roster.models.Coach;
 import com.krystalwhite.Roster.models.Player;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class PlayerController {
 
     @Autowired
     private PlayerRepository playerRepository;
+
+    @Autowired
+    private CoachRepository coachRepository;
 
     @GetMapping("")
     public String index(Model model) {
@@ -41,20 +46,28 @@ public class PlayerController {
     @GetMapping("add")
     public String displayAddPlayerForm(Model model) {
         model.addAttribute("title", "Add a Player");
+        model.addAttribute("coaches", coachRepository.findAll());
         model.addAttribute(new Player());
         return "player/add";
     }
 
     @PostMapping("add")
     public String processAddPlayerForm(@ModelAttribute @Valid Player newPlayer,
-            Errors errors, Model model) {
+            Errors errors, Model model, @RequestParam int coachId) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Invalid Entry. Please Try Again.");
+            model.addAttribute("coaches", coachRepository.findAll());
             return "player/add";
         }
-        model.addAttribute("title", "New Player Added");
+        Optional optCoach = coachRepository.findById(coachId);
+        if (optCoach.isPresent()) {
+            Coach coach = (Coach) optCoach.get();
+            model.addAttribute("coach", coach);
+            newPlayer.setCoach(coach);
+        }
         playerRepository.save(newPlayer);
+        model.addAttribute("title", "New Player Added");
         return "index";
     }
 
