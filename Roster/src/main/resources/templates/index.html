@@ -4,6 +4,7 @@
 <body>
   <nav th:replace="fragments :: navBar"></nav>
   <header th:replace="fragments :: header"></header>
+  <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
   <footer th:replace="fragments :: footer"></footer>
 </body>

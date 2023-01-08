@@ -9,6 +9,7 @@ public class HomeController {
 
     @GetMapping("")
     public String renderLandingPage(Model model){
+        model.addAttribute("title", "Player and Sport Landing Page");
         return "index";
     }
 

@@ -4,6 +4,18 @@
 <body>
 <nav th:replace="fragments :: navBar"></nav>
 <header th:replace="fragments :: header"></header>
+<h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+<table id="players">
+    <tr th:each="player:${players}">
+        <td>
+            <p th:text="${'Player Id: ' + player.id}"></p>
+            <p th:text="${'Name: ' + player.firstName + ' ' + player.lastName}"></p>
+            <p th:text="${'Sport: ' + player.sport}"></p>
+        </td>
+    </tr>
+</table>
+
 
 <footer th:replace="fragments :: footer"></footer>
 </body>
