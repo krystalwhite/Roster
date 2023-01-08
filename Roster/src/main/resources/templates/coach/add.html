@@ -5,6 +5,21 @@
 <nav th:replace="fragments :: navBar"></nav>
 <header th:replace="fragments :: header"></header>
 
+<div>
+    <form method = "post">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Coach's first name...">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Coach's last name...">
+
+        <label for="sport">Sport</label>
+        <input type="text" id="sport" name="sport" placeholder="Coach's primary sport...">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
 <footer th:replace="fragments :: footer"></footer>
 </body>
 </html>
