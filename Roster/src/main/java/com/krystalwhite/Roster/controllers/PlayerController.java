@@ -50,12 +50,12 @@ public class PlayerController {
             Errors errors, Model model) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Invalid Entry, Please Try Again");
+            model.addAttribute("title", "Invalid Entry. Please Try Again.");
             return "player/add";
         }
         model.addAttribute("title", "New Player Added");
         playerRepository.save(newPlayer);
-        return "redirect:";
+        return "index";
     }
 
 }

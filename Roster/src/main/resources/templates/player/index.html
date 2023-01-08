@@ -10,7 +10,7 @@
     <tr th:each="player:${players}">
         <td>
             <p th:text="${'Player Id: ' + player.id}"></p>
-            <p th:text="${'Name: ' + player.name}"></p>
+            <p th:text="${'Name: ' + player.firstName + ' ' + player.lastName}"></p>
             <p th:text="${'Sport: ' + player.sport}"></p>
         </td>
     </tr>
